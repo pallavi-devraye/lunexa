@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Offshore software development team building web, mobile and AI products">
+  <defs>
+    <linearGradient id="h-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#150E24"/><stop offset="100%" stop-color="#0A0711"/>
+    </linearGradient>
+    <linearGradient id="h-v" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="h-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbd07a"/><stop offset="100%" stop-color="#d99a26"/>
+    </linearGradient>
+    <radialGradient id="h-glow" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".38"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#h-bg)"/>
+  <rect width="800" height="500" fill="url(#h-glow)"/>
+  <g stroke="#ffffff" stroke-opacity=".05">
+    <path d="M0 100h800M0 200h800M0 300h800M0 400h800M100 0v500M200 0v500M300 0v500M400 0v500M500 0v500M600 0v500M700 0v500"/>
+  </g>
+
+  <!-- Browser window -->
+  <rect x="70" y="86" width="420" height="272" rx="16" fill="#1C1330" stroke="#ffffff" stroke-opacity=".12"/>
+  <rect x="70" y="86" width="420" height="34" rx="16" fill="#271A44"/>
+  <rect x="70" y="104" width="420" height="16" fill="#271A44"/>
+  <circle cx="92" cy="103" r="5" fill="#f4b740"/><circle cx="110" cy="103" r="5" fill="#8b5cf6"/><circle cx="128" cy="103" r="5" fill="#ffffff" fill-opacity=".25"/>
+  <rect x="152" y="96" width="180" height="14" rx="7" fill="#ffffff" fill-opacity=".08"/>
+
+  <rect x="94" y="142" width="150" height="12" rx="6" fill="url(#h-v)"/>
+  <rect x="94" y="164" width="256" height="9" rx="4.5" fill="#ffffff" fill-opacity=".16"/>
+  <rect x="94" y="182" width="212" height="9" rx="4.5" fill="#ffffff" fill-opacity=".11"/>
+  <rect x="94" y="212" width="104" height="30" rx="15" fill="url(#h-v)"/>
+  <rect x="210" y="212" width="94" height="30" rx="15" fill="#ffffff" fill-opacity=".08" stroke="#ffffff" stroke-opacity=".14"/>
+
+  <!-- Chart card -->
+  <rect x="94" y="262" width="176" height="76" rx="12" fill="#271A44" stroke="#ffffff" stroke-opacity=".08"/>
+  <polyline points="112,320 142,304 170,312 198,286 226,294 252,272" fill="none" stroke="url(#h-g)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="252" cy="272" r="5" fill="#f4b740"/>
+
+  <!-- Metric tiles -->
+  <rect x="286" y="262" width="88" height="76" rx="12" fill="#271A44" stroke="#ffffff" stroke-opacity=".08"/>
+  <rect x="302" y="282" width="42" height="10" rx="5" fill="#a78bfa"/>
+  <rect x="302" y="302" width="56" height="7" rx="3.5" fill="#ffffff" fill-opacity=".14"/>
+  <rect x="386" y="262" width="88" height="76" rx="12" fill="#271A44" stroke="#ffffff" stroke-opacity=".08"/>
+  <rect x="402" y="282" width="34" height="10" rx="5" fill="#f4b740"/>
+  <rect x="402" y="302" width="56" height="7" rx="3.5" fill="#ffffff" fill-opacity=".14"/>
+
+  <!-- Phone -->
+  <rect x="536" y="120" width="150" height="290" rx="26" fill="#1C1330" stroke="#ffffff" stroke-opacity=".14"/>
+  <rect x="548" y="134" width="126" height="262" rx="18" fill="#0E0A18"/>
+  <rect x="588" y="126" width="46" height="7" rx="3.5" fill="#ffffff" fill-opacity=".18"/>
+  <rect x="566" y="156" width="90" height="10" rx="5" fill="url(#h-v)"/>
+  <rect x="566" y="180" width="90" height="52" rx="10" fill="#271A44"/>
+  <circle cx="590" cy="206" r="12" fill="#8b5cf6" fill-opacity=".55"/>
+  <rect x="612" y="198" width="34" height="6" rx="3" fill="#ffffff" fill-opacity=".2"/>
+  <rect x="612" y="212" width="24" height="6" rx="3" fill="#ffffff" fill-opacity=".12"/>
+  <rect x="566" y="246" width="90" height="52" rx="10" fill="#271A44"/>
+  <circle cx="590" cy="272" r="12" fill="#f4b740" fill-opacity=".55"/>
+  <rect x="612" y="264" width="34" height="6" rx="3" fill="#ffffff" fill-opacity=".2"/>
+  <rect x="612" y="278" width="24" height="6" rx="3" fill="#ffffff" fill-opacity=".12"/>
+  <rect x="566" y="316" width="90" height="30" rx="15" fill="url(#h-g)"/>
+
+  <!-- Orbiting nodes -->
+  <circle cx="712" cy="96" r="30" fill="#271A44" stroke="#a78bfa" stroke-opacity=".5"/>
+  <path d="M700 96h24M712 84v24" stroke="#a78bfa" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="452" cy="424" r="26" fill="#271A44" stroke="#f4b740" stroke-opacity=".5"/>
+  <circle cx="452" cy="424" r="8" fill="#f4b740"/>
+  <path d="M482 420 536 392" stroke="#ffffff" stroke-opacity=".18" stroke-width="2" stroke-dasharray="5 6"/>
+  <path d="M690 118 620 150" stroke="#ffffff" stroke-opacity=".18" stroke-width="2" stroke-dasharray="5 6"/>
+</svg>

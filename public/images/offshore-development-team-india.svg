@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Offshore development team in India working with clients in the US, UK, UAE, Europe and Australia">
+  <defs>
+    <linearGradient id="o-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#150E24"/><stop offset="100%" stop-color="#0A0711"/></linearGradient>
+    <linearGradient id="o-v" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#6d28d9"/></linearGradient>
+    <radialGradient id="o-globe" cx="38%" cy="30%" r="70%"><stop offset="0%" stop-color="#2b1d4d"/><stop offset="100%" stop-color="#150E24"/></radialGradient>
+    <radialGradient id="o-glow" cx="50%" cy="45%" r="55%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity=".3"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#o-bg)"/><rect width="640" height="400" fill="url(#o-glow)"/>
+
+  <!-- Globe -->
+  <circle cx="320" cy="200" r="132" fill="url(#o-globe)" stroke="#a78bfa" stroke-opacity=".35" stroke-width="2"/>
+  <g fill="none" stroke="#a78bfa" stroke-opacity=".22" stroke-width="1.6">
+    <ellipse cx="320" cy="200" rx="132" ry="46"/>
+    <ellipse cx="320" cy="200" rx="132" ry="92"/>
+    <ellipse cx="320" cy="200" rx="46" ry="132"/>
+    <ellipse cx="320" cy="200" rx="92" ry="132"/>
+    <path d="M188 200h264M320 68v264"/>
+  </g>
+
+  <!-- Hub: Pune -->
+  <circle cx="356" cy="228" r="12" fill="#f4b740"/>
+  <circle cx="356" cy="228" r="22" fill="none" stroke="#f4b740" stroke-opacity=".5" stroke-width="2"/>
+  <circle cx="356" cy="228" r="34" fill="none" stroke="#f4b740" stroke-opacity=".22" stroke-width="2"/>
+
+  <!-- Arcs to markets -->
+  <g fill="none" stroke="#a78bfa" stroke-opacity=".65" stroke-width="2.2" stroke-dasharray="7 8">
+    <path d="M356 228C286 150 200 132 132 148"/>
+    <path d="M356 228C316 156 268 116 224 100"/>
+    <path d="M356 228C412 172 468 148 520 152"/>
+    <path d="M356 228C400 268 456 292 512 288"/>
+    <path d="M356 228C352 276 316 316 262 322"/>
+  </g>
+
+  <!-- Market nodes -->
+  <g>
+    <circle cx="132" cy="148" r="9" fill="#a78bfa"/><circle cx="132" cy="148" r="17" fill="none" stroke="#a78bfa" stroke-opacity=".4"/>
+    <circle cx="224" cy="100" r="8" fill="#c4b5fd"/>
+    <circle cx="520" cy="152" r="9" fill="#a78bfa"/><circle cx="520" cy="152" r="17" fill="none" stroke="#a78bfa" stroke-opacity=".4"/>
+    <circle cx="512" cy="288" r="8" fill="#c4b5fd"/>
+    <circle cx="262" cy="322" r="8" fill="#c4b5fd"/>
+  </g>
+
+  <!-- Labels -->
+  <g font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#e5e0f5">
+    <rect x="42" y="112" width="60" height="26" rx="13" fill="#271A44" stroke="#ffffff" stroke-opacity=".14"/><text x="72" y="129" text-anchor="middle">USA</text>
+    <rect x="176" y="52" width="60" height="26" rx="13" fill="#271A44" stroke="#ffffff" stroke-opacity=".14"/><text x="206" y="69" text-anchor="middle">UK</text>
+    <rect x="540" y="116" width="60" height="26" rx="13" fill="#271A44" stroke="#ffffff" stroke-opacity=".14"/><text x="570" y="133" text-anchor="middle">UAE</text>
+    <rect x="536" y="304" width="72" height="26" rx="13" fill="#271A44" stroke="#ffffff" stroke-opacity=".14"/><text x="572" y="321" text-anchor="middle">Australia</text>
+    <rect x="176" y="336" width="72" height="26" rx="13" fill="#271A44" stroke="#ffffff" stroke-opacity=".14"/><text x="212" y="353" text-anchor="middle">Europe</text>
+  </g>
+
+  <!-- Pune tag -->
+  <g transform="translate(376 244)">
+    <rect width="104" height="30" rx="15" fill="url(#o-v)" stroke="#ffffff" stroke-opacity=".22"/>
+    <text x="52" y="20" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Pune, India</text>
+  </g>
+</svg>

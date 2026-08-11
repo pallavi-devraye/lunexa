@@ -1,0 +1,27 @@
+{
+  "name": "Lunexa Technologies",
+  "short_name": "Lunexa",
+  "description": "Offshore software development company in Pune, India — websites, web apps, mobile apps, AI features and cloud engineering for companies worldwide.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0711",
+  "theme_color": "#0A0711",
+  "orientation": "portrait-primary",
+  "categories": ["business", "technology", "productivity"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

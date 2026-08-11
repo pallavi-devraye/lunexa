@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lunexa Technologies logo">
+  <defs>
+    <linearGradient id="lx-tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="55%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#4c1d95"/>
+    </linearGradient>
+    <linearGradient id="lx-moon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#fbd07a"/>
+      <stop offset="100%" stop-color="#f4b740"/>
+    </linearGradient>
+    <mask id="lx-crescent">
+      <rect width="64" height="64" fill="#000"/>
+      <circle cx="32" cy="32" r="17" fill="#fff"/>
+      <circle cx="41.5" cy="26" r="15" fill="#000"/>
+    </mask>
+  </defs>
+
+  <rect x="2" y="2" width="60" height="60" rx="17" fill="url(#lx-tile)"/>
+  <rect x="2" y="2" width="60" height="60" rx="17" fill="none" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.5"/>
+
+  <!-- Crescent: a lit disc with an offset disc masked out of it -->
+  <rect width="64" height="64" fill="url(#lx-moon)" mask="url(#lx-crescent)"/>
+
+  <!-- Orbit arc and node, reading as the "nexus" half of the name -->
+  <path d="M14 44.5c7.5 6.5 21 7.5 30.5 1.5" fill="none" stroke="#ffffff" stroke-opacity=".75" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="47.5" cy="43.5" r="3.6" fill="#f4b740" stroke="#ffffff" stroke-opacity=".6" stroke-width="1.2"/>
+</svg>

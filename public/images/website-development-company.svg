@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Responsive business website on desktop, tablet and mobile">
+  <defs>
+    <linearGradient id="w-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#150E24"/><stop offset="100%" stop-color="#0A0711"/></linearGradient>
+    <linearGradient id="w-v" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#6d28d9"/></linearGradient>
+    <radialGradient id="w-glow" cx="30%" cy="20%" r="70%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity=".3"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#w-bg)"/><rect width="640" height="400" fill="url(#w-glow)"/>
+
+  <!-- Desktop -->
+  <rect x="48" y="58" width="380" height="248" rx="14" fill="#1C1330" stroke="#ffffff" stroke-opacity=".13"/>
+  <rect x="48" y="58" width="380" height="30" rx="14" fill="#271A44"/><rect x="48" y="74" width="380" height="14" fill="#271A44"/>
+  <circle cx="68" cy="73" r="4.5" fill="#f4b740"/><circle cx="84" cy="73" r="4.5" fill="#8b5cf6"/><circle cx="100" cy="73" r="4.5" fill="#ffffff" fill-opacity=".22"/>
+  <rect x="124" y="67" width="150" height="12" rx="6" fill="#ffffff" fill-opacity=".08"/>
+  <rect x="72" y="110" width="140" height="14" rx="7" fill="url(#w-v)"/>
+  <rect x="72" y="134" width="220" height="8" rx="4" fill="#ffffff" fill-opacity=".16"/>
+  <rect x="72" y="150" width="182" height="8" rx="4" fill="#ffffff" fill-opacity=".1"/>
+  <rect x="72" y="174" width="92" height="26" rx="13" fill="url(#w-v)"/>
+  <rect x="176" y="174" width="80" height="26" rx="13" fill="#ffffff" fill-opacity=".07" stroke="#ffffff" stroke-opacity=".13"/>
+  <rect x="316" y="110" width="88" height="90" rx="12" fill="#271A44" stroke="#ffffff" stroke-opacity=".08"/>
+  <circle cx="360" cy="146" r="18" fill="#8b5cf6" fill-opacity=".45"/>
+  <rect x="332" y="174" width="56" height="7" rx="3.5" fill="#ffffff" fill-opacity=".16"/>
+  <g fill="#271A44" stroke="#ffffff" stroke-opacity=".08">
+    <rect x="72" y="218" width="104" height="66" rx="12"/><rect x="188" y="218" width="104" height="66" rx="12"/><rect x="304" y="218" width="104" height="66" rx="12"/>
+  </g>
+  <g fill="#a78bfa"><rect x="90" y="238" width="30" height="8" rx="4"/><rect x="206" y="238" width="30" height="8" rx="4"/><rect x="322" y="238" width="30" height="8" rx="4"/></g>
+  <g fill="#ffffff" fill-opacity=".14"><rect x="90" y="256" width="66" height="6" rx="3"/><rect x="206" y="256" width="66" height="6" rx="3"/><rect x="322" y="256" width="66" height="6" rx="3"/></g>
+  <rect x="176" y="306" width="124" height="8" rx="4" fill="#ffffff" fill-opacity=".1"/>
+  <rect x="204" y="314" width="68" height="18" rx="4" fill="#271A44"/>
+
+  <!-- Mobile -->
+  <rect x="466" y="112" width="124" height="234" rx="22" fill="#1C1330" stroke="#ffffff" stroke-opacity=".15"/>
+  <rect x="476" y="124" width="104" height="210" rx="15" fill="#0E0A18"/>
+  <rect x="508" y="118" width="40" height="6" rx="3" fill="#ffffff" fill-opacity=".18"/>
+  <rect x="490" y="142" width="76" height="10" rx="5" fill="url(#w-v)"/>
+  <rect x="490" y="164" width="76" height="8" rx="4" fill="#ffffff" fill-opacity=".14"/>
+  <rect x="490" y="180" width="56" height="8" rx="4" fill="#ffffff" fill-opacity=".09"/>
+  <rect x="490" y="204" width="76" height="46" rx="10" fill="#271A44"/>
+  <rect x="490" y="262" width="76" height="24" rx="12" fill="#f4b740"/>
+  <rect x="490" y="298" width="50" height="7" rx="3.5" fill="#ffffff" fill-opacity=".12"/>
+
+  <!-- Speed badge -->
+  <g transform="translate(48 322)">
+    <rect width="112" height="34" rx="17" fill="#271A44" stroke="#f4b740" stroke-opacity=".45"/>
+    <path d="M26 10l-9 12h7l-2 10 9-12h-7z" fill="#f4b740"/>
+    <rect x="44" y="13" width="52" height="8" rx="4" fill="#ffffff" fill-opacity=".2"/>
+  </g>
+</svg>

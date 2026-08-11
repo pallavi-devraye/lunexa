@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" role="img" aria-label="Product engineering process: discovery, design and architecture, build in short cycles, launch and iterate">
+  <defs>
+    <linearGradient id="p-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#150E24"/><stop offset="100%" stop-color="#0A0711"/>
+    </linearGradient>
+    <linearGradient id="p-track" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a78bfa"/><stop offset="62%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#f4b740"/>
+    </linearGradient>
+    <radialGradient id="p-glow" cx="50%" cy="22%" r="62%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".26"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="p-gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbd07a"/><stop offset="100%" stop-color="#e0a52c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="340" fill="url(#p-bg)"/>
+  <rect width="800" height="340" fill="url(#p-glow)"/>
+
+  <!-- Connecting track, drawn behind the nodes -->
+  <path d="M120 150h560" stroke="url(#p-track)" stroke-width="2.5" stroke-linecap="round" opacity=".55"/>
+
+  <!-- 01 · Discovery -->
+  <g transform="translate(120 150)">
+    <circle r="42" fill="#150E24"/>
+    <circle r="42" fill="#8b5cf6" fill-opacity=".10" stroke="#a78bfa" stroke-width="2"/>
+    <g stroke="#c4b5fd" stroke-width="3.4" fill="none" stroke-linecap="round">
+      <circle cx="-3" cy="-4" r="13"/>
+      <path d="M7 6l11 11"/>
+    </g>
+    <text y="-58" text-anchor="middle" font-family="Sora, Inter, sans-serif" font-size="15" font-weight="700" fill="#a78bfa" letter-spacing="1">01</text>
+    <text y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#ffffff">Discovery</text>
+    <text y="92" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" fill="#8e86a8">Scope &amp; costed plan</text>
+  </g>
+
+  <!-- 02 · Design -->
+  <g transform="translate(307 150)">
+    <circle r="42" fill="#150E24"/>
+    <circle r="42" fill="#8b5cf6" fill-opacity=".10" stroke="#a78bfa" stroke-width="2"/>
+    <!-- Pencil: body, nib and tip, drawn along a 45° axis -->
+    <g transform="rotate(45)">
+      <rect x="-6.5" y="-17" width="13" height="24" rx="2.5" fill="#c4b5fd"/>
+      <path d="M-6.5 7h13l-6.5 12z" fill="#f4b740"/>
+      <path d="M-2.4 15.4h4.8L0 19.9z" fill="#150E24"/>
+      <rect x="-6.5" y="-17" width="13" height="5" rx="2.5" fill="#a78bfa"/>
+    </g>
+    <text y="-58" text-anchor="middle" font-family="Sora, Inter, sans-serif" font-size="15" font-weight="700" fill="#a78bfa" letter-spacing="1">02</text>
+    <text y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#ffffff">Design</text>
+    <text y="92" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" fill="#8e86a8">Prototype you can click</text>
+  </g>
+
+  <!-- 03 · Build -->
+  <g transform="translate(493 150)">
+    <circle r="42" fill="#150E24"/>
+    <circle r="42" fill="#8b5cf6" fill-opacity=".10" stroke="#a78bfa" stroke-width="2"/>
+    <g stroke="#c4b5fd" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-7 -11l-11 11 11 11"/>
+      <path d="M7 -11l11 11-11 11"/>
+    </g>
+    <text y="-58" text-anchor="middle" font-family="Sora, Inter, sans-serif" font-size="15" font-weight="700" fill="#a78bfa" letter-spacing="1">03</text>
+    <text y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#ffffff">Build</text>
+    <text y="92" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" fill="#8e86a8">Demoed every sprint</text>
+  </g>
+
+  <!-- 04 · Launch -->
+  <g transform="translate(680 150)">
+    <circle r="42" fill="#150E24"/>
+    <circle r="42" fill="#f4b740" fill-opacity=".10" stroke="#f4b740" stroke-width="2"/>
+    <!-- Rocket: fins behind, then fuselage, porthole, exhaust -->
+    <g>
+      <path d="M-7 4c-6 3-9 8-9 14 4 0 7-2 9-5z" fill="#d99a26"/>
+      <path d="M7 4c6 3 9 8 9 14-4 0-7-2-9-5z" fill="#d99a26"/>
+      <path d="M0-20c6 6 9 14 9 22 0 4-1 8-3 11h-12c-2-3-3-7-3-11 0-8 3-16 9-22z" fill="url(#p-gold)"/>
+      <circle cy="-4" r="4.6" fill="#150E24"/>
+      <path d="M-3.6 20h7.2l-3.6 8z" fill="#f4b740" fill-opacity=".65"/>
+    </g>
+    <text y="-58" text-anchor="middle" font-family="Sora, Inter, sans-serif" font-size="15" font-weight="700" fill="#f4b740" letter-spacing="1">04</text>
+    <text y="70" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#ffffff">Launch</text>
+    <text y="92" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" fill="#8e86a8">Deploy, monitor, hand over</text>
+  </g>
+
+  <!-- Feedback loop from launch back to discovery -->
+  <path d="M680 278c0 24-125 40-280 40s-280-16-280-40" fill="none" stroke="#ffffff" stroke-opacity=".16" stroke-width="1.75" stroke-dasharray="6 8"/>
+  <path d="M126 272l-6 8 8 5" fill="none" stroke="#ffffff" stroke-opacity=".34" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="330" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" fill="#ffffff" fill-opacity=".32">then iterate on what real users do</text>
+</svg>

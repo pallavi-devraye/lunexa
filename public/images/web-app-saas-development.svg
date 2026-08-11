@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Custom SaaS dashboard with analytics, tables and user management">
+  <defs>
+    <linearGradient id="s-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#150E24"/><stop offset="100%" stop-color="#0A0711"/></linearGradient>
+    <linearGradient id="s-v" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#6d28d9"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+    <linearGradient id="s-g" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#d99a26"/><stop offset="100%" stop-color="#fbd07a"/></linearGradient>
+    <radialGradient id="s-glow" cx="70%" cy="15%" r="65%"><stop offset="0%" stop-color="#8b5cf6" stop-opacity=".28"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#s-bg)"/><rect width="640" height="400" fill="url(#s-glow)"/>
+
+  <rect x="40" y="40" width="560" height="320" rx="16" fill="#1C1330" stroke="#ffffff" stroke-opacity=".13"/>
+  <!-- Sidebar -->
+  <path d="M40 56a16 16 0 0116-16h96v320H56a16 16 0 01-16-16z" fill="#0E0A18"/>
+  <rect x="64" y="64" width="26" height="26" rx="8" fill="url(#s-v)"/>
+  <rect x="98" y="72" width="42" height="10" rx="5" fill="#ffffff" fill-opacity=".2"/>
+  <rect x="60" y="112" width="72" height="26" rx="8" fill="#8b5cf6" fill-opacity=".25"/>
+  <rect x="72" y="121" width="44" height="8" rx="4" fill="#a78bfa"/>
+  <g fill="#ffffff" fill-opacity=".12"><rect x="72" y="153" width="52" height="8" rx="4"/><rect x="72" y="181" width="60" height="8" rx="4"/><rect x="72" y="209" width="44" height="8" rx="4"/><rect x="72" y="237" width="56" height="8" rx="4"/></g>
+  <rect x="60" y="300" width="72" height="30" rx="10" fill="#271A44"/>
+  <circle cx="78" cy="315" r="9" fill="#f4b740" fill-opacity=".7"/>
+  <rect x="94" y="311" width="28" height="7" rx="3.5" fill="#ffffff" fill-opacity=".18"/>
+
+  <!-- Topbar -->
+  <rect x="152" y="40" width="448" height="46" fill="#0E0A18"/>
+  <rect x="176" y="56" width="120" height="12" rx="6" fill="#ffffff" fill-opacity=".18"/>
+  <rect x="420" y="52" width="112" height="22" rx="11" fill="#271A44"/>
+  <circle cx="562" cy="63" r="14" fill="url(#s-v)"/>
+
+  <!-- KPI row -->
+  <g fill="#271A44" stroke="#ffffff" stroke-opacity=".08">
+    <rect x="176" y="106" width="128" height="66" rx="12"/><rect x="316" y="106" width="128" height="66" rx="12"/><rect x="456" y="106" width="120" height="66" rx="12"/>
+  </g>
+  <rect x="194" y="124" width="46" height="8" rx="4" fill="#ffffff" fill-opacity=".16"/><rect x="194" y="142" width="66" height="14" rx="7" fill="#a78bfa"/>
+  <rect x="334" y="124" width="46" height="8" rx="4" fill="#ffffff" fill-opacity=".16"/><rect x="334" y="142" width="54" height="14" rx="7" fill="#f4b740"/>
+  <rect x="474" y="124" width="46" height="8" rx="4" fill="#ffffff" fill-opacity=".16"/><rect x="474" y="142" width="60" height="14" rx="7" fill="#ffffff" fill-opacity=".35"/>
+
+  <!-- Bar chart -->
+  <rect x="176" y="190" width="248" height="150" rx="12" fill="#271A44" stroke="#ffffff" stroke-opacity=".08"/>
+  <rect x="196" y="206" width="70" height="8" rx="4" fill="#ffffff" fill-opacity=".16"/>
+  <g>
+    <rect x="200" y="278" width="22" height="42" rx="6" fill="url(#s-v)"/>
+    <rect x="234" y="256" width="22" height="64" rx="6" fill="url(#s-v)"/>
+    <rect x="268" y="290" width="22" height="30" rx="6" fill="url(#s-v)"/>
+    <rect x="302" y="240" width="22" height="80" rx="6" fill="url(#s-g)"/>
+    <rect x="336" y="266" width="22" height="54" rx="6" fill="url(#s-v)"/>
+    <rect x="370" y="230" width="22" height="90" rx="6" fill="url(#s-v)"/>
+  </g>
+
+  <!-- Table -->
+  <rect x="436" y="190" width="140" height="150" rx="12" fill="#271A44" stroke="#ffffff" stroke-opacity=".08"/>
+  <rect x="452" y="206" width="60" height="8" rx="4" fill="#ffffff" fill-opacity=".16"/>
+  <g>
+    <g transform="translate(452 230)"><circle cx="9" cy="9" r="9" fill="#8b5cf6" fill-opacity=".55"/><rect x="26" y="4" width="52" height="6" rx="3" fill="#ffffff" fill-opacity=".18"/><rect x="26" y="14" width="34" height="5" rx="2.5" fill="#ffffff" fill-opacity=".1"/></g>
+    <g transform="translate(452 268)"><circle cx="9" cy="9" r="9" fill="#f4b740" fill-opacity=".55"/><rect x="26" y="4" width="46" height="6" rx="3" fill="#ffffff" fill-opacity=".18"/><rect x="26" y="14" width="40" height="5" rx="2.5" fill="#ffffff" fill-opacity=".1"/></g>
+    <g transform="translate(452 306)"><circle cx="9" cy="9" r="9" fill="#ffffff" fill-opacity=".3"/><rect x="26" y="4" width="56" height="6" rx="3" fill="#ffffff" fill-opacity=".18"/><rect x="26" y="14" width="30" height="5" rx="2.5" fill="#ffffff" fill-opacity=".1"/></g>
+  </g>
+</svg>

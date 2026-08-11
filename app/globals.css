@@ -1,0 +1,296 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 18px;
+}
+
+html {
+  color-scheme: dark;
+}
+
+/* The canvas is a deep plum rather than a neutral black, lit by two soft
+   aurora washes. Fixed attachment keeps the light source still while the
+   page scrolls, so long pages don't feel like they're sliding through it. */
+body {
+  @apply bg-night text-slate-400 antialiased;
+  background-image:
+    radial-gradient(1100px 620px at 8% -8%, rgba(139, 92, 246, 0.20), transparent 62%),
+    radial-gradient(760px 520px at 96% 2%, rgba(244, 183, 64, 0.09), transparent 60%),
+    radial-gradient(900px 700px at 50% 108%, rgba(109, 40, 217, 0.14), transparent 65%);
+  background-attachment: fixed;
+}
+
+::selection {
+  @apply bg-brand/45 text-white;
+}
+
+.container-g {
+  @apply max-w-7xl mx-auto px-4 sm:px-6;
+}
+
+/* ---------- Type ---------- */
+h1,
+h2,
+h3,
+h4 {
+  @apply font-display font-semibold text-white tracking-tight;
+}
+
+.navlink {
+  @apply text-sm font-medium text-slate-400 hover:text-white transition-colors;
+}
+
+/* Moonlight sweep — violet through gold. Used on the words we want to carry
+   the brand, never on a whole paragraph. */
+.gradient-text {
+  @apply bg-gradient-to-r from-brand-light via-brand to-accent bg-clip-text text-transparent;
+}
+
+.eyebrow {
+  @apply inline-flex items-center gap-2 rounded-full bg-brand/10 text-brand-faint px-3.5 py-1.5
+         text-[11px] font-semibold uppercase tracking-[0.18em] ring-1 ring-brand/25;
+}
+
+.section {
+  @apply py-20 md:py-28;
+}
+
+/* ---------- Surfaces ---------- */
+
+/* Cards get a hairline gradient edge rather than a flat ring: the border is
+   brighter at the top-left, which reads as a single overhead light source
+   and keeps a grid of cards from looking like flat rectangles. */
+.card {
+  @apply relative rounded-2xl bg-night-700/60 backdrop-blur-sm;
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.07),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.055),
+    0 18px 40px -28px rgba(0, 0, 0, 0.9);
+}
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:bg-night-600/60;
+}
+.card-hover:hover {
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+    inset 0 0 0 1px rgba(167, 139, 250, 0.28),
+    0 26px 60px -30px rgba(139, 92, 246, 0.55);
+}
+
+/* Feature card with a violet edge on the left — used where a list of cards
+   would otherwise read as an undifferentiated grid. */
+.card-edge {
+  @apply card overflow-hidden;
+}
+.card-edge::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 2px;
+  background: linear-gradient(180deg, #a78bfa, #8b5cf6 45%, transparent);
+}
+
+.panel {
+  @apply rounded-2xl bg-night-800 ring-1 ring-white/10;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition-all
+         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+         focus-visible:ring-offset-night focus-visible:ring-brand-light;
+}
+
+/* Pill-shaped primary with a top highlight, so it reads as a lit physical
+   control rather than a flat colour block. */
+.btn-primary {
+  @apply relative overflow-hidden text-white shadow-glow-sm hover:shadow-glow
+         ring-1 ring-inset ring-white/20 hover:-translate-y-0.5 active:translate-y-0;
+  background-image: linear-gradient(180deg, #a78bfa 0%, #8b5cf6 48%, #6d28d9 100%);
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 1px 1px auto 1px;
+  height: 46%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.26), transparent);
+  pointer-events: none;
+}
+.btn-primary:hover {
+  background-image: linear-gradient(180deg, #bfa6ff 0%, #9a6ff8 48%, #7c3aed 100%);
+}
+
+.btn-outline {
+  @apply ring-1 ring-inset ring-white/15 text-slate-200 bg-white/[0.04] hover:bg-white/[0.09] hover:ring-white/30;
+}
+.btn-gold {
+  @apply text-night font-bold ring-1 ring-inset ring-white/25 shadow-gold hover:-translate-y-0.5;
+  background-image: linear-gradient(180deg, #fbd07a 0%, #f4b740 50%, #d99a26 100%);
+}
+.btn-lg {
+  @apply px-7 py-3.5 text-base;
+}
+
+/* ---------- Chips / badges ---------- */
+.badge {
+  @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold bg-brand/15 text-brand-faint ring-1 ring-brand/30;
+}
+.chip {
+  @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium bg-white/[0.06] text-slate-400 ring-1 ring-white/10;
+}
+.chip-gold {
+  @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold bg-accent/12 text-accent-light ring-1 ring-accent/25;
+}
+
+/* ---------- Decorative ---------- */
+.aurora {
+  background: radial-gradient(1000px 520px at 50% -10%, rgba(139, 92, 246, 0.22), transparent 66%);
+}
+.grid-lines {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 62px 62px;
+}
+.grid-mask {
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 25%, #000 35%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 25%, #000 35%, transparent 100%);
+}
+/* Hairline divider that fades out at both ends */
+.rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+}
+
+.section-raised {
+  @apply bg-white/[0.022] border-y border-white/[0.06];
+}
+.section-deep {
+  @apply bg-night-900 border-y border-white/[0.06];
+}
+
+/* Call-to-action band: a lit panel, not a flat bright gradient — a bright
+   band would fight the dark canvas and blow out on mobile. */
+.cta-band {
+  /* isolate creates a stacking context so the ::before overlay can sit at
+     z-index -1: above the band's own background, below its content. Without
+     it the overlay would paint over the text. */
+  @apply relative overflow-hidden border-y border-white/[0.09] isolate;
+  background:
+    radial-gradient(720px 340px at 26% -10%, rgba(139, 92, 246, 0.34), transparent 66%),
+    radial-gradient(620px 340px at 82% 115%, rgba(244, 183, 64, 0.16), transparent 64%),
+    linear-gradient(180deg, #120C1E 0%, #1A1128 100%);
+}
+.cta-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 54px 54px;
+  pointer-events: none;
+  z-index: -1;
+}
+/* Deliberately NOT `.cta-band > * { position: relative }` — that would
+   override the absolutely-positioned decorative blurs back into the flow,
+   adding their full height as blank space above the content. */
+.cta-band.rounded-3xl {
+  @apply border ring-1 ring-white/10;
+}
+
+/* ---------- Prose (blog) ---------- */
+.prose {
+  @apply text-slate-300;
+}
+.prose p {
+  @apply leading-8 my-5 text-slate-300;
+}
+.prose h2 {
+  @apply text-2xl md:text-[1.7rem] mt-12 mb-4 scroll-mt-28 leading-snug text-white;
+}
+.prose h3 {
+  @apply text-xl mt-8 mb-3 scroll-mt-28 text-white;
+}
+.prose ul {
+  @apply list-disc my-5 space-y-2 pl-5 marker:text-brand;
+}
+.prose ol {
+  @apply list-decimal my-5 space-y-2 pl-5 marker:text-brand marker:font-semibold;
+}
+.prose li {
+  @apply leading-7 pl-1 text-slate-300;
+}
+.prose a {
+  @apply text-brand-light underline underline-offset-4 decoration-brand/40 hover:decoration-brand;
+}
+.prose strong {
+  @apply text-white font-semibold;
+}
+.prose pre {
+  @apply bg-black/50 ring-1 ring-white/10 text-slate-200 rounded-2xl p-4 overflow-x-auto my-5 text-sm;
+}
+.prose code {
+  @apply text-sm bg-white/10 text-brand-faint rounded px-1.5 py-0.5;
+}
+.prose pre code {
+  @apply bg-transparent text-slate-200 p-0;
+}
+.prose blockquote {
+  @apply border-l-2 border-accent bg-accent/[0.07] rounded-r-2xl px-5 py-3 my-6 text-slate-200 italic;
+}
+.prose blockquote p {
+  @apply my-1;
+}
+.prose hr {
+  @apply my-10 border-white/10;
+}
+.prose img {
+  @apply rounded-2xl my-6;
+}
+.prose table {
+  @apply w-full my-6 text-sm border-collapse;
+}
+.prose thead {
+  @apply bg-white/[0.06];
+}
+.prose th {
+  @apply text-left font-semibold text-white p-3 border border-white/10;
+}
+.prose td {
+  @apply p-3 border border-white/10 text-slate-300 align-top;
+}
+.table-wrap {
+  @apply overflow-x-auto -mx-1 px-1;
+}
+
+/* Google Maps embeds are third-party iframes we cannot style directly.
+   Inverting and rotating the hue renders them dark while keeping labels legible. */
+.map-dark {
+  filter: invert(92%) hue-rotate(180deg) saturate(0.7) contrast(0.9) brightness(0.95);
+}
+
+/* ---------- Forms ---------- */
+.field {
+  @apply space-y-1.5;
+}
+.field-label {
+  @apply text-sm block text-slate-300 font-medium;
+}
+.input,
+.textarea {
+  @apply w-full rounded-xl bg-white/[0.04] ring-1 ring-inset ring-white/10 text-white placeholder:text-slate-500 p-3
+         focus:ring-2 focus:ring-brand focus:bg-white/[0.07] outline-none transition;
+}
+.input option {
+  @apply bg-night-700 text-white;
+}
+.alert-success {
+  @apply rounded-xl ring-1 ring-emerald-500/30 bg-emerald-500/10 text-emerald-300 p-3.5 text-sm;
+}
+.alert-error {
+  @apply rounded-xl ring-1 ring-red-500/30 bg-red-500/10 text-red-300 p-3.5 text-sm;
+}
