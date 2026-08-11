@@ -5,7 +5,7 @@ software development company based in Wagholi, Pune, India, serving clients in
 the US, UK, UAE, Europe, Australia, and India.
 
 - **Live domain:** https://www.lunexatechnologies.com
-- **Repository:** https://github.com/rizwan-dev/lunexa
+- **Repository:** https://github.com/pallavi-devraye/lunexa
 - **Hosting:** Vercel
 
 ---
@@ -34,7 +34,7 @@ the US, UK, UAE, Europe, Australia, and India.
 If Node.js and git are already installed:
 
 ```bash
-git clone https://github.com/rizwan-dev/lunexa.git
+git clone https://github.com/pallavi-devraye/lunexa.git
 cd lunexa
 npm install
 npm run dev
@@ -73,13 +73,13 @@ Where a command uses `openssl`, an alternative is given.
 **1. Get the code.**
 
 ```bash
-git clone https://github.com/rizwan-dev/lunexa.git
+git clone https://github.com/pallavi-devraye/lunexa.git
 ```
 
 If that asks for a password and fails, use the GitHub Desktop app instead, or
-sign in with the `gh` CLI (`gh auth login`), then clone again. SSH
-(`git@github.com:rizwan-dev/lunexa.git`) works only if SSH keys are set up on
-that machine.
+sign in with the `gh` CLI (`gh auth login`), then clone again. The SSH form
+(`git@github.com:pallavi-devraye/lunexa.git`) works only if SSH keys are set
+up on that machine.
 
 **2. Move into the folder.**
 
@@ -365,7 +365,7 @@ are not all set.
 This needs nothing installed. It can be done entirely in a browser.
 
 1. Go to https://vercel.com and sign in **with the GitHub account that can see
-   `rizwan-dev/lunexa`**.
+   `pallavi-devraye/lunexa`**.
 2. Click **Add New → Project**.
 3. Find `lunexa` in the repository list and click **Import**.
 4. Leave every build setting alone — Vercel detects Next.js automatically. Do
