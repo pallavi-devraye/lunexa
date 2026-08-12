@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { site } from '@/lib/site';
+import { site, showPhonePublicly } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: { absolute: `Terms of Service | ${site.name}` },
@@ -112,8 +112,12 @@ export default function TermsPage() {
             {site.address.full}
             <br />
             Email: <a href={`mailto:${site.email}`}>{site.email}</a>
-            <br />
-            Phone: <a href={`tel:${site.phoneRaw}`}>{site.phone}</a>
+            {showPhonePublicly && (
+              <>
+                <br />
+                Phone: <a href={`tel:${site.phoneRaw}`}>{site.phone}</a>
+              </>
+            )}
           </p>
         </div>
 

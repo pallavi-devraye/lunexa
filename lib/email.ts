@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import { site } from '@/lib/site';
+import { site, showPhonePublicly } from '@/lib/site';
 
 // Email over SMTP (Zoho, Google Workspace, Fastmail, …). Activates only when
 // SMTP_HOST, SMTP_USER and SMTP_PASS are set — see README for the full list.
@@ -141,7 +141,7 @@ function brandedHtml(heading: string, bodyHtml: string) {
     <tr><td style="padding:18px 28px;background:#f9fafb;border-top:1px solid #e5e7eb;color:#6b7280;font-size:12px;line-height:1.7">
       ${site.name} · ${site.address.locality}, ${site.address.country}<br/>
       <a href="mailto:${site.email}" style="color:${BRAND};text-decoration:none">${site.email}</a>
-      &nbsp;·&nbsp; ${site.phone}
+      ${showPhonePublicly ? `&nbsp;·&nbsp; ${site.phone}` : ''}
       &nbsp;·&nbsp; <a href="${site.url}" style="color:${BRAND};text-decoration:none">${site.domain}</a>
     </td></tr>
   </table>
@@ -171,7 +171,9 @@ export async function sendAcknowledgementEmail({
     'If it works for you, we sign an NDA and agree the first milestone.',
   ];
   const intro = `Thank you for contacting <strong>${site.name}</strong>. Your enquiry has landed with our team, and a real person will reply — usually within one business day.`;
-  const closingLine = `In the meantime you can reply straight to this email, or call <a href="tel:${site.phoneRaw}" style="color:${BRAND};text-decoration:none">${site.phone}</a>.`;
+  const closingLine = showPhonePublicly
+    ? `In the meantime you can reply straight to this email, or call <a href="tel:${site.phoneRaw}" style="color:${BRAND};text-decoration:none">${site.phone}</a>.`
+    : `In the meantime, just reply to this email — it reaches us directly.`;
   const signoff = `Talk soon,<br/>The ${site.name} team`;
 
   const bodyHtml =

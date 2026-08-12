@@ -1,4 +1,4 @@
-import { site } from '@/lib/site';
+import { site, showPhonePublicly } from '@/lib/site';
 import { allTech } from '@/lib/tech';
 
 function JsonLd({ data }: { data: Record<string, unknown> }) {
@@ -23,7 +23,9 @@ export function OrganizationStructuredData() {
         description: site.description,
         foundingDate: site.foundingYear,
         email: site.email,
-        telephone: site.phoneRaw,
+        // Omitted when the number is unpublished — telling search engines about
+        // a number that appears nowhere on the site is a mismatch worth avoiding.
+        ...(showPhonePublicly ? { telephone: site.phoneRaw } : {}),
         priceRange: '$$',
         areaServed: [
           { '@type': 'Country', name: 'United States' },
@@ -51,7 +53,7 @@ export function OrganizationStructuredData() {
         ],
         contactPoint: {
           '@type': 'ContactPoint',
-          telephone: site.phoneRaw,
+          ...(showPhonePublicly ? { telephone: site.phoneRaw } : {}),
           email: site.email,
           contactType: 'sales',
           areaServed: ['US', 'GB', 'AE', 'AU', 'CA', 'SG', 'IN'],

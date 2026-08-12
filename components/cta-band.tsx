@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Mail, Phone, MessageCircle, Check } from 'lucide-react';
-import { site, whatsappLink } from '@/lib/site';
+import { site, showPhonePublicly, whatsappLink } from '@/lib/site';
 
 const reassurances = ['Reply within 1 business day', 'NDA on request', 'You own the IP', 'No sales sequence'];
 
@@ -31,14 +31,18 @@ export function CtaBand({
       href: `mailto:${site.email}`,
       external: false,
     },
-    {
-      key: 'phone',
-      Icon: Phone,
-      label: 'Call us',
-      value: site.phone,
-      href: `tel:${site.phoneRaw}`,
-      external: false,
-    },
+    ...(showPhonePublicly
+      ? [
+          {
+            key: 'phone',
+            Icon: Phone,
+            label: 'Call us',
+            value: site.phone,
+            href: `tel:${site.phoneRaw}`,
+            external: false,
+          },
+        ]
+      : []),
     {
       key: 'whatsapp',
       Icon: MessageCircle,
@@ -48,6 +52,13 @@ export function CtaBand({
       external: true,
     },
   ];
+
+  // Both class strings appear literally so Tailwind's scanner keeps them.
+  const contactCols = contacts.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2';
+
+  // Pages ask for a "Call" secondary button. With the number unpublished that
+  // would be a dead end, so it falls back to the channel that still works.
+  const secondaryAction = secondary === 'call' && !showPhonePublicly ? 'whatsapp' : secondary;
 
   return (
     <section className="cta-band">
@@ -73,7 +84,7 @@ export function CtaBand({
             <Link href="/contact" className="btn btn-lg btn-primary">
               {primaryLabel}
             </Link>
-            {secondary === 'whatsapp' && (
+            {secondaryAction === 'whatsapp' && (
               <a
                 href={whatsappLink(`Hi ${site.name}, I'd like a quote for a project.`)}
                 target="_blank"
@@ -83,12 +94,12 @@ export function CtaBand({
                 Chat on WhatsApp
               </a>
             )}
-            {secondary === 'call' && (
+            {secondaryAction === 'call' && (
               <a href={`tel:${site.phoneRaw}`} className="btn btn-lg btn-outline">
                 Call {site.phone}
               </a>
             )}
-            {secondary === 'work' && (
+            {secondaryAction === 'work' && (
               <Link href="/portfolio" className="btn btn-lg btn-outline">
                 See our work
               </Link>
@@ -107,7 +118,7 @@ export function CtaBand({
 
         {/* Direct routes, for the reader who is ready to talk right now */}
         <div className="rule mt-14" />
-        <div className="grid sm:grid-cols-3 gap-4 mt-10">
+        <div className={`grid ${contactCols} gap-4 mt-10`}>
           {contacts.map(({ key, Icon, label, value, href, external }) => (
             <a
               key={key}

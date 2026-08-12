@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Menu, X, MessageCircle, Phone } from 'lucide-react';
 import clsx from 'clsx';
-import { nav, site, whatsappLink } from '@/lib/site';
+import { nav, site, showPhonePublicly, whatsappLink } from '@/lib/site';
 
 export function Header() {
   const pathname = usePathname();
@@ -74,13 +74,26 @@ export function Header() {
           </nav>
 
           <div className="hidden xl:flex items-center gap-2.5 shrink-0">
-            <a
-              href={`tel:${site.phoneRaw}`}
-              className="btn btn-outline"
-              aria-label={`Call ${site.phone}`}
-            >
-              <Phone className="mr-2" size={15} /> {site.phone}
-            </a>
+            {/* WhatsApp stands in when the number is not published, so the
+                header still offers a direct channel rather than a lone button. */}
+            {showPhonePublicly ? (
+              <a
+                href={`tel:${site.phoneRaw}`}
+                className="btn btn-outline"
+                aria-label={`Call ${site.phone}`}
+              >
+                <Phone className="mr-2" size={15} /> {site.phone}
+              </a>
+            ) : (
+              <a
+                href={whatsappLink(`Hi ${site.name}, I'd like a quote for a project.`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline"
+              >
+                <MessageCircle className="mr-2" size={15} /> WhatsApp
+              </a>
+            )}
             <Link href="/contact" className="btn btn-primary">
               Get a Free Quote
             </Link>

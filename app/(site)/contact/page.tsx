@@ -2,7 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { Phone, Mail, MapPin, MessageCircle, Clock, Loader2, Check } from 'lucide-react';
-import { site, whatsappLink } from '@/lib/site';
+import { site, showPhonePublicly, whatsappLink } from '@/lib/site';
 
 const serviceOptions = [
   'Website Development',
@@ -277,18 +277,20 @@ export default function ContactPage() {
                 Chat with us now
               </span>
             </a>
-            <a
-              href={`tel:${site.phoneRaw}`}
-              className="flex items-center gap-3.5 text-slate-300 hover:text-brand-light transition-colors"
-            >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand/12 text-brand-light ring-1 ring-brand/20">
-                <Phone size={18} />
-              </span>
-              <span>
-                <span className="block text-xs text-slate-500">Phone</span>
-                {site.phone}
-              </span>
-            </a>
+            {showPhonePublicly && (
+              <a
+                href={`tel:${site.phoneRaw}`}
+                className="flex items-center gap-3.5 text-slate-300 hover:text-brand-light transition-colors"
+              >
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand/12 text-brand-light ring-1 ring-brand/20">
+                  <Phone size={18} />
+                </span>
+                <span>
+                  <span className="block text-xs text-slate-500">Phone</span>
+                  {site.phone}
+                </span>
+              </a>
+            )}
             <a
               href={`mailto:${site.email}`}
               className="flex items-center gap-3.5 text-slate-300 hover:text-brand-light transition-colors"

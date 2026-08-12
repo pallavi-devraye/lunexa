@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Mail, Phone, MapPin, MessageCircle, Linkedin, Github } from 'lucide-react';
-import { site, whatsappLink } from '@/lib/site';
+import { site, showPhonePublicly, whatsappLink } from '@/lib/site';
 
 const serviceLinks = [
   { href: '/services/website-development', label: 'Website Development' },
@@ -114,12 +114,14 @@ export function Footer() {
               <MapPin size={16} className="mt-0.5 shrink-0 text-brand-light" />
               <span className="leading-relaxed">{site.address.full}</span>
             </li>
-            <li className="flex gap-3 items-center">
-              <Phone size={16} className="shrink-0 text-brand-light" />
-              <a className="hover:text-white transition-colors" href={`tel:${site.phoneRaw}`}>
-                {site.phone}
-              </a>
-            </li>
+            {showPhonePublicly && (
+              <li className="flex gap-3 items-center">
+                <Phone size={16} className="shrink-0 text-brand-light" />
+                <a className="hover:text-white transition-colors" href={`tel:${site.phoneRaw}`}>
+                  {site.phone}
+                </a>
+              </li>
+            )}
             <li className="flex gap-3 items-center">
               <Mail size={16} className="shrink-0 text-brand-light" />
               <a className="hover:text-white transition-colors break-all" href={`mailto:${site.email}`}>
