@@ -95,7 +95,9 @@ export default function PortfolioPage() {
       <CtaBand
         title="Have a constraint of your own?"
         lede="Tell us the budget, the deadline, or the legacy system you are working around. That is usually where the interesting engineering starts."
-        secondary="call"
+        // No secondary button here: the fallback for an unpublished channel is
+        // "See our work", which on this page would link back to itself.
+        secondary="none"
       />
     </>
   );

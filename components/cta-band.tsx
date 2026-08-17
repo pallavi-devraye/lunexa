@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Mail, Phone, MessageCircle, Check } from 'lucide-react';
-import { site, showPhonePublicly, whatsappLink } from '@/lib/site';
+import { site, showPhonePublicly, showWhatsApp, whatsappLink } from '@/lib/site';
 
 const reassurances = ['Reply within 1 business day', 'NDA on request', 'You own the IP', 'No sales sequence'];
 
@@ -43,22 +43,38 @@ export function CtaBand({
           },
         ]
       : []),
-    {
-      key: 'whatsapp',
-      Icon: MessageCircle,
-      label: 'WhatsApp',
-      value: 'Message us now',
-      href: whatsappLink(`Hi ${site.name}, I'd like a quote for a project.`),
-      external: true,
-    },
+    ...(showWhatsApp
+      ? [
+          {
+            key: 'whatsapp',
+            Icon: MessageCircle,
+            label: 'WhatsApp',
+            value: 'Message us now',
+            href: whatsappLink(`Hi ${site.name}, I'd like a quote for a project.`),
+            external: true,
+          },
+        ]
+      : []),
   ];
 
-  // Both class strings appear literally so Tailwind's scanner keeps them.
-  const contactCols = contacts.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2';
+  // Every option appears as a literal class so Tailwind's scanner keeps them.
+  // A single remaining route is centred and narrowed — stretched across the
+  // full container it reads as a broken row rather than a deliberate one.
+  const contactCols =
+    contacts.length >= 3
+      ? 'sm:grid-cols-3'
+      : contacts.length === 2
+        ? 'sm:grid-cols-2'
+        : 'sm:grid-cols-1 max-w-sm mx-auto';
 
-  // Pages ask for a "Call" secondary button. With the number unpublished that
-  // would be a dead end, so it falls back to the channel that still works.
-  const secondaryAction = secondary === 'call' && !showPhonePublicly ? 'whatsapp' : secondary;
+  // Pages request a "Call" or "WhatsApp" secondary button. If that channel is
+  // not published the button would be a dead end, so it degrades to the work
+  // link — still a useful next step rather than a missing button.
+  const requested = secondary;
+  const secondaryAction =
+    (requested === 'call' && !showPhonePublicly) || (requested === 'whatsapp' && !showWhatsApp)
+      ? 'work'
+      : requested;
 
   return (
     <section className="cta-band">

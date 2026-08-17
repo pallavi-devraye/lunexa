@@ -58,32 +58,48 @@ export const nav = [
   { href: '/blog', label: 'Blog' },
 ] as const;
 
+// ---------------------------------------------------------------------------
+// Contact channel visibility
+// ---------------------------------------------------------------------------
+//
+// Both flags are annotated `: boolean` rather than inferred. Declared inside
+// the `as const` object above they would narrow to a literal type, and
+// TypeScript would then reject the opposite branch as unreachable — so
+// flipping a flag would break the build instead of changing the site.
+//
+// These two travel together. A `wa.me/<number>` link contains the same digits
+// as the phone number, so publishing WhatsApp while hiding the phone does not
+// actually keep the number off the site. To remove it properly, both must be
+// off — which is the current setting.
+
 /**
- * Whether to publish the phone number on the website.
+ * Publish the phone number.
  *
- * Set to `false` and the number disappears from every public surface at once:
- * the header, footer, contact page, closing CTA, legal pages, outbound email,
- * and the `telephone` field in the structured data Google reads. Keeping the
- * schema in step matters — advertising a number to search engines that appears
- * nowhere on the page is the kind of mismatch that erodes trust in the rest of
- * the markup.
+ * When `false` it disappears from the footer, contact page, closing CTA, both
+ * legal pages, outbound email, and the `telephone` field in the structured data
+ * Google reads. Keeping the schema in step matters: advertising a number to
+ * search engines that appears nowhere on the page is the kind of mismatch that
+ * undermines trust in the rest of the markup.
  *
- * Two things worth knowing before switching it off:
- *
- *   1. WhatsApp links still contain the same digits (`wa.me/<number>`), so this
- *      does not hide the number from anyone determined to scrape it. If the
- *      goal is fewer spam calls, publish a virtual number in `site.phone`
- *      instead of switching this off.
- *   2. For an offshore company selling into the US and UK, a reachable phone
- *      number is one of the stronger signals that a real business is behind the
- *      site. Removing it has a cost with exactly the audience this site targets.
- *
- * Annotated `: boolean` rather than inferred deliberately. Inside the `as const`
- * object above it would narrow to the literal `true`, and TypeScript would then
- * reject the `=== false` comparisons as impossible — so flipping the flag would
- * break the build instead of changing the site.
+ * The number is never shown in the site header regardless of this flag — the
+ * header CTA is a button, which is what comparable firms do.
  */
-export const showPhonePublicly: boolean = true;
+export const showPhonePublicly: boolean = false;
+
+/**
+ * Publish WhatsApp as a contact channel.
+ *
+ * When `false` the floating chat button, the header and footer links, the
+ * contact-page row, and every "Chat on WhatsApp" button across the service,
+ * blog, and CTA sections all disappear, leaving the enquiry form and email as
+ * the routes in.
+ *
+ * Worth knowing: among comparable firms selling into the US, UK, and Europe,
+ * WhatsApp is not a standard channel — none of the peer sites reviewed offered
+ * it. It is common for buyers in India and the Gulf, so this is worth
+ * revisiting if those markets become the priority.
+ */
+export const showWhatsApp: boolean = false;
 
 export function whatsappLink(message?: string) {
   const base = `https://wa.me/${site.whatsapp}`;

@@ -4,9 +4,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { Menu, X, MessageCircle, Phone } from 'lucide-react';
+import { Menu, X, MessageCircle } from 'lucide-react';
 import clsx from 'clsx';
-import { nav, site, showPhonePublicly, whatsappLink } from '@/lib/site';
+import { nav, site, showWhatsApp, whatsappLink } from '@/lib/site';
 
 export function Header() {
   const pathname = usePathname();
@@ -73,18 +73,11 @@ export function Header() {
             ))}
           </nav>
 
+          {/* No phone number here by design. Comparable firms put a button in
+              the header — "Let's Talk", "Estimate project" — and keep contact
+              details in the footer and on the contact page. */}
           <div className="hidden xl:flex items-center gap-2.5 shrink-0">
-            {/* WhatsApp stands in when the number is not published, so the
-                header still offers a direct channel rather than a lone button. */}
-            {showPhonePublicly ? (
-              <a
-                href={`tel:${site.phoneRaw}`}
-                className="btn btn-outline"
-                aria-label={`Call ${site.phone}`}
-              >
-                <Phone className="mr-2" size={15} /> {site.phone}
-              </a>
-            ) : (
+            {showWhatsApp && (
               <a
                 href={whatsappLink(`Hi ${site.name}, I'd like a quote for a project.`)}
                 target="_blank"
@@ -135,15 +128,19 @@ export function Header() {
                 {l.label}
               </Link>
             ))}
-            <div className="mt-4 grid grid-cols-2 gap-3">
-              <a
-                href={whatsappLink(`Hi ${site.name}, I'd like a quote for a project.`)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-outline"
-              >
-                <MessageCircle className="mr-2" size={16} /> WhatsApp
-              </a>
+            {/* One full-width button when WhatsApp is off, rather than a
+                half-width button with a hole beside it. */}
+            <div className={clsx('mt-4 grid gap-3', showWhatsApp && 'grid-cols-2')}>
+              {showWhatsApp && (
+                <a
+                  href={whatsappLink(`Hi ${site.name}, I'd like a quote for a project.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline"
+                >
+                  <MessageCircle className="mr-2" size={16} /> WhatsApp
+                </a>
+              )}
               <Link href="/contact" className="btn btn-primary">
                 Free Quote
               </Link>

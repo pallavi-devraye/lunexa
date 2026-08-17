@@ -13,7 +13,7 @@ import {
   FaqStructuredData,
 } from '@/components/structured-data';
 import { services, getService } from '@/lib/services';
-import { site, whatsappLink } from '@/lib/site';
+import { site, showWhatsApp, whatsappLink } from '@/lib/site';
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -88,14 +88,20 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
               <Link href="/contact" className="btn btn-primary btn-lg">
                 Get a free quote
               </Link>
-              <a
-                href={whatsappLink(`Hi ${site.name}, I'm interested in ${service.title}.`)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-outline btn-lg"
-              >
-                Chat on WhatsApp
-              </a>
+              {showWhatsApp ? (
+                <a
+                  href={whatsappLink(`Hi ${site.name}, I'm interested in ${service.title}.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline btn-lg"
+                >
+                  Chat on WhatsApp
+                </a>
+              ) : (
+                <Link href="/portfolio" className="btn btn-outline btn-lg">
+                  See our work
+                </Link>
+              )}
             </div>
           </div>
           <div className="card overflow-hidden">

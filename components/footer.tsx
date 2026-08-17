@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Mail, Phone, MapPin, MessageCircle, Linkedin, Github } from 'lucide-react';
-import { site, showPhonePublicly, whatsappLink } from '@/lib/site';
+import { site, showPhonePublicly, showWhatsApp, whatsappLink } from '@/lib/site';
 
 const serviceLinks = [
   { href: '/services/website-development', label: 'Website Development' },
@@ -49,14 +49,16 @@ export function Footer() {
             mobile apps, AI features, and cloud infrastructure for companies across the US, UK, UAE,
             Europe, Australia, and India.
           </p>
-          <a
-            href={whatsappLink(`Hi ${site.name}, I'd like a quote for a project.`)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-emerald-400 hover:text-emerald-300"
-          >
-            <MessageCircle size={16} /> Chat with us on WhatsApp
-          </a>
+          {showWhatsApp && (
+            <a
+              href={whatsappLink(`Hi ${site.name}, I'd like a quote for a project.`)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-emerald-400 hover:text-emerald-300"
+            >
+              <MessageCircle size={16} /> Chat with us on WhatsApp
+            </a>
+          )}
           {socials.length > 0 && (
             <div className="mt-6 flex items-center gap-3">
               {socials.map(({ href, label, Icon }) => (

@@ -2,7 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { Phone, Mail, MapPin, MessageCircle, Clock, Loader2, Check } from 'lucide-react';
-import { site, showPhonePublicly, whatsappLink } from '@/lib/site';
+import { site, showPhonePublicly, showWhatsApp, whatsappLink } from '@/lib/site';
 
 const serviceOptions = [
   'Website Development',
@@ -263,20 +263,22 @@ export default function ContactPage() {
         <div className="lg:col-span-2 space-y-5">
           <div className="card p-7 space-y-5">
             <h2 className="font-semibold text-lg text-white">Talk to us directly</h2>
-            <a
-              href={whatsappLink(`Hi ${site.name}, I'd like a quote for a project.`)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3.5 text-slate-300 hover:text-brand-light transition-colors"
-            >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400 ring-1 ring-emerald-500/25">
-                <MessageCircle size={18} />
-              </span>
-              <span>
-                <span className="block text-xs text-slate-500">WhatsApp</span>
-                Chat with us now
-              </span>
-            </a>
+            {showWhatsApp && (
+              <a
+                href={whatsappLink(`Hi ${site.name}, I'd like a quote for a project.`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3.5 text-slate-300 hover:text-brand-light transition-colors"
+              >
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-400 ring-1 ring-emerald-500/25">
+                  <MessageCircle size={18} />
+                </span>
+                <span>
+                  <span className="block text-xs text-slate-500">WhatsApp</span>
+                  Chat with us now
+                </span>
+              </a>
+            )}
             {showPhonePublicly && (
               <a
                 href={`tel:${site.phoneRaw}`}

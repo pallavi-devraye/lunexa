@@ -9,7 +9,7 @@ import {
   FaqStructuredData,
 } from '@/components/structured-data';
 import { getAllPostsMeta, getPost, pickPostImage } from '@/lib/blog';
-import { site, whatsappLink } from '@/lib/site';
+import { site, showWhatsApp, whatsappLink } from '@/lib/site';
 
 export const dynamic = 'force-static';
 
@@ -224,14 +224,20 @@ export default async function BlogPostPage({ params }: Props) {
                 <Link href="/contact" className="btn btn-primary">
                   Get a free quote
                 </Link>
-                <a
-                  href={whatsappLink(`Hi ${site.name}, I read your article "${post.title}" and have a question.`)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-outline"
-                >
-                  Chat on WhatsApp
-                </a>
+                {showWhatsApp ? (
+                  <a
+                    href={whatsappLink(`Hi ${site.name}, I read your article "${post.title}" and have a question.`)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline"
+                  >
+                    Chat on WhatsApp
+                  </a>
+                ) : (
+                  <a href={`mailto:${site.email}`} className="btn btn-outline">
+                    Email us
+                  </a>
+                )}
               </div>
             </div>
 
