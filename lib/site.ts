@@ -17,13 +17,13 @@ export const site = {
   whatsapp: '918983265077',
   foundingYear: '2020',
   address: {
-    street: 'H603, Dreams Rakshak Society, Wagholi',
+    street: 'Dreams Rakshak Society, Wagholi',
     locality: 'Pune',
     region: 'Maharashtra',
     postalCode: '412207',
     country: 'India',
     countryCode: 'IN',
-    full: 'H603, Dreams Rakshak Society, Wagholi, Pune, Maharashtra 412207, India',
+    full: 'Dreams Rakshak Society, Wagholi, Pune, Maharashtra 412207, India',
     // Approximate coordinates for Wagholi, Pune — used by LocalBusiness schema.
     lat: 18.5793,
     lng: 73.9819,
