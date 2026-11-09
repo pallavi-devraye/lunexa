@@ -15,7 +15,7 @@ export const site = {
   phone: '+91 89832 65077',
   phoneRaw: '+918983265077',
   whatsapp: '918983265077',
-  foundingYear: '2026',
+  foundingYear: '2020',
   address: {
     street: 'H603, Dreams Rakshak Society, Wagholi',
     locality: 'Pune',
